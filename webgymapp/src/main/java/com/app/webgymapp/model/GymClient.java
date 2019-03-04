@@ -11,15 +11,15 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name = "GymClient")
+@Table(name = "gymclient")
 @Setter
 @Getter
 public class GymClient {
 	
 	@Id
-	@Column(name = "id")
+	@Column(name = "gym_client_id")
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
+	private Long gymClientId;
 	
 	@Column(name = "name")
 	private String name;

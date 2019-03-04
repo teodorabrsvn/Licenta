@@ -33,15 +33,15 @@ public class GymClientServiceImpl implements GymClientService {
 	}
 
 	@Override
-	public GymClient getGymClient(Long id) {
+	public GymClient getGymClient(Long gymClientId) {
 		// TODO Auto-generated method stub
-		return gymClientDao.findOne(id);
+		return gymClientDao.findOne(gymClientId);
 	}
 
 	@Override
-	public void deleteGymClient(Long id) {
+	public void deleteGymClient(Long gymClientId) {
 		// TODO Auto-generated method stub
-		gymClientDao.delete(id);
+		gymClientDao.delete(gymClientId);
 	}
 
 }

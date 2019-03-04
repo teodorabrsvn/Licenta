@@ -12,8 +12,8 @@ public interface GymClientService {
 	
 	List<GymClient> getAllGymClientsList();
 	
-	GymClient getGymClient(Long id);
+	GymClient getGymClient(Long gymClientId);
 	
-	void deleteGymClient(Long id);
+	void deleteGymClient(Long gymClientId);
 
 }

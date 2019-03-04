@@ -38,14 +38,14 @@ public class GymClientController {
 		return gymClientService.getAllGymClientsList();
 	}
 	
-	@GetMapping("/by/{id}")
-	public GymClient getGymClient(@PathVariable(name = "id") Long id) {
-		return gymClientService.getGymClient(id);
+	@GetMapping("/by/{gymClientId}")
+	public GymClient getGymClient(@PathVariable(name = "gymClientId") Long gymClientId) {
+		return gymClientService.getGymClient(gymClientId);
 	}
 	
-	@DeleteMapping("/delete/{id}")
-	public void deleteGymClient(@PathVariable(name = "id") Long id) {
-		gymClientService.deleteGymClient(id);
+	@DeleteMapping("/delete/{gymClientId}")
+	public void deleteGymClient(@PathVariable(name = "gymClientId") Long gymClientId) {
+		gymClientService.deleteGymClient(gymClientId);
 	}
 	
 }
