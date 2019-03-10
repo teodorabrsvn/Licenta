@@ -27,7 +27,7 @@ public class GymClientServiceImpl implements GymClientService {
 	}
 
 	@Override
-	public List<GymClient> getAllGymClientsList() {
+	public List<GymClient> getAllGymClientList() {
 		// TODO Auto-generated method stub
 		return gymClientDao.findAll();
 	}

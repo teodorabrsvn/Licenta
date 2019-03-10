@@ -12,8 +12,7 @@ import lombok.Setter;
 
 @Entity
 @Table(name = "gymclient")
-@Setter
-@Getter
+
 public class GymClient {
 	
 	@Id
@@ -29,5 +28,36 @@ public class GymClient {
 	
 	@Column(name = "occupation")
 	private String occupation;
-	
+
+	public Long getGymClientId() {
+		return gymClientId;
+	}
+
+	public void setGymClientId(Long gymClientId) {
+		this.gymClientId = gymClientId;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getAdress() {
+		return adress;
+	}
+
+	public void setAdress(String adress) {
+		this.adress = adress;
+	}
+
+	public String getOccupation() {
+		return occupation;
+	}
+
+	public void setOccupation(String occupation) {
+		this.occupation = occupation;
+	}
 }

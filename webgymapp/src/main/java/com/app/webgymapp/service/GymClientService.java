@@ -10,7 +10,7 @@ public interface GymClientService {
 	
 	GymClient updateGymClient(GymClient gymClient);
 	
-	List<GymClient> getAllGymClientsList();
+	List<GymClient> getAllGymClientList();
 	
 	GymClient getGymClient(Long gymClientId);
 	

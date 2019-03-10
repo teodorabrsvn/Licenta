@@ -35,7 +35,7 @@ public class GymClientController {
 	
 	@GetMapping("/all")
 	public List<GymClient> getAllGymClients() {
-		return gymClientService.getAllGymClientsList();
+		return gymClientService.getAllGymClientList();
 	}
 	
 	@GetMapping("/by/{gymClientId}")
