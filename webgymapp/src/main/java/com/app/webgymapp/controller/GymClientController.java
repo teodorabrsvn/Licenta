@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.app.webgymapp.model.GymClass;
 import com.app.webgymapp.model.GymClient;
+import com.app.webgymapp.service.GymClassService;
 import com.app.webgymapp.service.GymClientService;
 
 @RequestMapping("gymclient")
@@ -21,6 +23,9 @@ public class GymClientController {
 
 	@Autowired
 	private GymClientService gymClientService;
+	
+	@Autowired
+	private GymClassService gymClassService;
 	
 	@PostMapping("/save")
 	public GymClient save(@RequestBody GymClient gymClient) {
@@ -48,4 +53,15 @@ public class GymClientController {
 		gymClientService.deleteGymClient(gymClientId);
 	}
 	
+	@PutMapping("/addGymClass/{gymClientId}/{gymClassId}")
+	public void addGymClass(@PathVariable(name = "gymClientId") Long gymClientId, @PathVariable(name = "gymClassId") Long gymClassId ){
+		GymClient gymClient = gymClientService.getGymClient(gymClientId);
+		GymClass gymClass= gymClassService.getGymClass(gymClassId);
+		if(!gymClient.hasGymClass(gymClass) && !gymClass.hasGymClient(gymClient)) {
+			gymClient.addGymClass(gymClass);
+			gymClass.addGymClient(gymClient);
+			gymClientService.updateGymClient(gymClient);
+			gymClassService.updateGymClass(gymClass);
+		}
+	}
 }
