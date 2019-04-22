@@ -36,6 +36,28 @@ public class GymClass {
 	@Column(name = "difficulty")
 	private String difficulty;
 	
+	public String getDay() {
+		return day;
+	}
+
+	public void setDay(String day) {
+		this.day = day;
+	}
+
+	public String getHour() {
+		return hour;
+	}
+
+	public void setHour(String hour) {
+		this.hour = hour;
+	}
+
+	@Column(name = "day")
+	private String day;
+	
+	@Column(name = "hour")
+	private String hour;
+
 	
 	//@JoinTable(name="reservationToClass", joinColumns={@JoinColumn(name="classId")},inverseJoinColumns= {@JoinColumn(name="gymClientId")})
 	@ManyToMany
